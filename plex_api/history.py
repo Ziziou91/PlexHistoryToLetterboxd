@@ -1,7 +1,7 @@
 """Plex watch history functionality."""
 from .client import get_plex_response
 
-def get_watch_history(token: str, accountID: str, librarySectionID: str) -> str:
+def get_watch_history(address: str, token: str, accountID: str, librarySectionID: str) -> str:
     """Return list of media watched by a given user in a library.
     
     Args:
@@ -12,7 +12,7 @@ def get_watch_history(token: str, accountID: str, librarySectionID: str) -> str:
     Returns:
         Response object containing watch history data
     """
-    url = f"http://localhost:32400/status/sessions/history/all?accountId={accountID}&librarySectionID={librarySectionID}&X-Plex-Token="
+    url = f"http://{address}:32400/status/sessions/history/all?accountId={accountID}&librarySectionID={librarySectionID}&X-Plex-Token="
     history_response = get_plex_response(url, token)
     
     return history_response

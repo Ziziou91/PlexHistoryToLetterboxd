@@ -2,7 +2,9 @@
 import xml.etree.ElementTree as ET
 from .client import get_plex_response
 
-def get_librarySectionID(token: str, lib_type: str = "movie") -> str:
+def get_librarySectionID(address: str, token: str, lib_type: str = "movie") -> str:
+    print(f"ADDRESS: {address}")
+    print(f"TOKEN {token}")
     """Return section key for a requested library.
     
         Args:
@@ -12,7 +14,8 @@ def get_librarySectionID(token: str, lib_type: str = "movie") -> str:
     Returns:
         The library section ID as a string
     """
-    list_res = get_plex_response("http://localhost:32400/library/sections?X-Plex-Token=", token)
+    url = f"http://{address}:32400/library/sections?X-Plex-Token="
+    list_res = get_plex_response(url, token)
     print("\nSuccess! Listing media libraries below.\n")
 
     root  = ET.fromstring(list_res.content)
