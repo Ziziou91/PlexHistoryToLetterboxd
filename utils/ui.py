@@ -8,7 +8,14 @@ def print_title(title: str, line_length: int = 70) -> None:
     print(f"{'-' * title_spacing}{title}{'-' * title_spacing}")
     print(f"{'=' * line_length}")
 
+def print_local_or_remote() -> None:
+  """Prints instructions for local or remote access to Plex server."""
+  instructions = """Is your Plex server on a local network or remote?
 
+1. Local network (same home/office as you)
+2. Remote (accessing from outside your home/office)
+"""
+  print(instructions)
 
 def print_address_instructions() -> None:
   """Prints instructions for finding the Plex servers ip address."""
@@ -16,13 +23,6 @@ def print_address_instructions() -> None:
 PLEX SEVER ADDRESS INSTRUCTIONS:
 -----------------------
 To find your Plex server's IP address, you can use the following methods:
-
-======= Local Network Instructions =======
-1. Open a web browser and go to `https://app.plex.tv/desktop/`
-2. Sign in with your Plex account
-3. Click on Settings (wrench icon) in the top-right corner
-4. In the left sidebar, select "Remote Access"
-5. Look for the "Private IP address" listed on this page (format: 192.168.x.x)
 
 ======= External/Remote Access Instructions =======
 1. Log into your Plex account at `https://app.plex.tv/desktop/`
