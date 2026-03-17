@@ -1,4 +1,4 @@
-# PlextToLetterboxd
+# PlexToLetterboxd
 
 Python script to sync Plex account watch history with a Letterboxd account.
 
